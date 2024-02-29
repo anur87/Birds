@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block title %}<title>Регистрация</title>{% endblock %}
+{% block keywords %}
+<meta name="keywords" content="регистрация пользователя, зарегистрировать, пользователь" />
+{% endblock %}
+{% block content %}
+        <h2>Регистрация</h2>
+			<br />
+        <form name="register_form" action = "{% url 'add_user' %}" method="POST" >
+                {% csrf_token %}
+						{{ register_form.email }}
+						{{ register_form.email.errors }}
+						<br />
+						<br />
+						{{ register_form.password }}
+						{{ register_form.password.errors }}
+						<br />
+						<br />
+						{{ register_form.confirm_password }}
+						{{ register_form.confirm_password.errors }}
+						<br />
+						<br />
+						<input type="submit" value="Зарегистрироваться">
+						<br />
+						<br />
+					</form>
+{% endblock %}

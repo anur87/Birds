@@ -1,0 +1,118 @@
+{% extends 'main.html' %}
+{% block title %} <title>Контакты</title>{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block keywords %}
+		<meta name="keywords" content="контакты" />
+	{% endblock  %}
+{% block content %}
+    <!-- contact -->
+	<div class="contact">
+		<!-- container -->
+		<div class="container">
+			<div class="contact-grids">
+				<h3>Наши адреса</h3>
+				<div class="address-grids">
+					<div class="col-md-4 address-text">
+						<div class="address-grid">
+							<h5>пр. Достык, д. 1,
+								<span>Алматы, Казахстан</span>
+							</h5>
+							<div class="address-info">
+								<div class="address-info-left">
+									<p>Телефон:</p>
+								</div>
+								<div class="address-info-left address-info-right">
+									<p>+7 777 000 00 00</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="address-info">
+								<div class="address-info-left">
+									<p>Факс:</p>
+								</div>
+								<div class="address-info-left address-info-right">
+									<p>8-727-1234567</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="e-mail">
+								<p>E-mail: <a href="mailto:almaty@mail.com">almaty@mail.com</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 address-text">
+						<div class="address-grid">
+							<h5>пр. Богенбай Батыра, д. 2,
+								<span>Астана, Казахстан</span>
+							</h5>
+							<div class="address-info">
+								<div class="address-info-left">
+									<p>Телефон:</p>
+								</div>
+								<div class="address-info-left address-info-right">
+									<p>+7 775 321 67 77</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="address-info">
+								<div class="address-info-left">
+									<p>Факс:</p>
+								</div>
+								<div class="address-info-left address-info-right">
+									<p>8-717-1234567</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="e-mail">
+								<p>E-mail: <a href="mailto:astana@mail.com">astana@mail.com</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 address-text">
+						<div class="address-grid">
+							<h5>пр. Абая, д. 3,
+								<span>Шымкент, Казахстан</span>
+							</h5>
+							<div class="address-info">
+								<div class="address-info-left">
+									<p>Телефон:</p>
+								</div>
+								<div class="address-info-left address-info-right">
+									<p>+7 702 123 45 67</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="address-info">
+								<div class="address-info-left">
+									<p>Факс:</p>
+								</div>
+								<div class="address-info-left address-info-right">
+									<p>8-725-1234567</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="e-mail">
+								<p>E-mail: <a href="mailto:shymkent@mail.com">shymkent@mail.com</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="contact-form">
+					<h3>Связаться с нами</h3>
+					<form name="feedback_model_form" action = "{% url 'feedback_form' %}" method="POST" >
+						{% csrf_token %}
+						{{ feedback_model_form.name }}
+						{{ feedback_model_form.email }}
+						{{ feedback_model_form.subject }}
+						{{ feedback_model_form.message }}
+						<input type="submit" value="Отправить">
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //contact -->
+{% endblock %}

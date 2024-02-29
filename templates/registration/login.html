@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block title %}<title>Вход в систему</title>{% endblock %}
+{% block keywords %}
+<meta name="keywords" content="авторизация пользователя, авторизовать, пользователь" />
+{% endblock %}
+{% block content %}
+        <h2>Вход</h2>
+			<br />
+			<br />
+        <form action="{% url 'user_login' %}" method="POST" >
+                {% csrf_token %}
+						{{ login_form.email.label }}:
+						{{ login_form.email }}
+						<br />
+						<br />
+						{{ login_form.password.label }}:
+						{{ login_form.password }}
+						<br />
+						<br />
+						<input type = "hidden" name = "next" value = "{{ next }}">
+						<input type="submit" value="Войти">
+						<br />
+						<br />
+					</form>
+					<a href="{% url 'password_reset' %}">Восстановление пароля</a>
+{% endblock %}

@@ -1,0 +1,41 @@
+<div class="col-md-3 sidebar">
+				<h5>Поиск по блогу</h5>
+				<div class="search">
+				  <form action="{% url 'search' %}" method = "get">
+					{{ search_form.q }}
+				  </form>
+				</div>
+
+				<div class="sidebar-bottom">
+					<h5>Архив</h5>
+					<ul>
+						{% for article in articles %}
+						<li><a href="{% url 'single' pk=article.pk  %}">{{ article.title }} - {{ article.date_publicity }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="sidebar-last">
+					<h5>Галерея</h5>
+					<ul>
+						<li><a href="static/images/p1.jpg"><img src="static/images/p1.jpg" alt="" ></a></li>
+						<li><a href="static/images/p2.jpg"><img src="static/images/p2.jpg" alt="" ></a></li>
+						<li><a href="static/images/p3.jpg"><img src="static/images/p3.jpg" alt="" ></a></li>
+					</ul>
+					<ul>
+						<li><a href="static/images/p2.jpg"><img src="static/images/p2.jpg" alt="" ></a></li>
+						<li><a href="static/images/p3.jpg"><img src="static/images/p3.jpg" alt="" ></a></li>
+						<li><a href="static/images/p1.jpg"><img src="static/images/p1.jpg" alt="" ></a></li>
+					</ul>
+					<ul>
+						<li><a href="static/images/p3.jpg"><img src="static/images/p3.jpg" alt="" ></a></li>
+						<li><a href="static/images/p1.jpg"><img src="static/images/p1.jpg" alt="" ></a></li>
+						<li><a href="static/images/p2.jpg"><img src="static/images/p2.jpg" alt="" ></a></li>
+					</ul>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //blog -->
